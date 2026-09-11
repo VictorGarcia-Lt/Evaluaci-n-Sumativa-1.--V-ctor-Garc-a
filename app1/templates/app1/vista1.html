@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaStack — Vista 1 · Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+                    },
+                    colors: {
+                        neon: {
+                            300: '#67e8f9',
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                            600: '#0891b2'
+                        },
+                        cyber: {
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed'
+                        }
+                    },
+                    boxShadow: {
+                        'neon-indigo': '0 0 0 1px rgba(99,102,241,0.25), 0 8px 32px -8px rgba(99,102,241,0.45)',
+                        'neon-violet': '0 0 0 1px rgba(139,92,246,0.25), 0 8px 32px -8px rgba(139,92,246,0.45)'
+                    },
+                    keyframes: {
+                        growx: {
+                            '0%': { transform: 'scaleX(0)' },
+                            '100%': { transform: 'scaleX(1)' }
+                        },
+                        floaty: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    },
+                    animation: {
+                        grow: 'growx 1.2s cubic-bezier(0.22,1,0.36,1) forwards',
+                        floaty: 'floaty 8s ease-in-out infinite'
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen">
+
+    <div class="pointer-events-none fixed inset-0 overflow-hidden">
+        <div class="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-cyber-500/20 blur-3xl animate-floaty"></div>
+        <div class="absolute top-1/3 -right-32 h-96 w-96 rounded-full bg-indigo-600/20 blur-3xl animate-floaty"></div>
+        <div class="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-neon-500/10 blur-3xl"></div>
+    </div>
+
+    <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 -translate-x-full border-r border-slate-800/60 bg-slate-950/80 backdrop-blur-md transition-transform duration-300 lg:translate-x-0">
+        <div class="flex h-full flex-col">
+            <div class="flex items-center gap-3 px-5 py-5">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-500 shadow-lg shadow-indigo-600/30">
+                    <i class="fa-solid fa-bolt text-white text-lg"></i>
+                </div>
+                <div>
+                    <p class="text-base font-bold leading-tight">NovaStack</p>
+                    <p class="text-[11px] font-medium uppercase tracking-widest text-slate-500">Enterprise Suite</p>
+                </div>
+            </div>
+
+            <div class="px-5 pb-2">
+                <p class="text-[10px] font-semibold uppercase tracking-widest text-slate-600">Workspace</p>
+            </div>
+            <nav class="flex-1 space-y-1 px-3">
+                <a href="/app1/vista1/" class="group flex items-center gap-3 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-500 px-3 py-2.5 text-sm font-semibold text-white shadow-neon-indigo">
+                    <i class="fa-solid fa-chart-simple w-5 text-left"></i>
+                    Vista 1 - Analytics
+                </a>
+                <a href="/app1/vista2/" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-400 transition hover:bg-slate-800/60 hover:text-white">
+                    <i class="fa-solid fa-cubes w-5 text-left"></i>
+                    Vista 2 - Módulos
+                </a>
+                <a href="/app1/vista1/" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-400 transition hover:bg-slate-800/60 hover:text-white">
+                    <i class="fa-solid fa-satellite-dish w-5 text-left"></i>
+                    Realtime Monitor
+                    <span class="ml-auto h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
+                </a>
+            </nav>
+
+            <div class="px-5 pb-2 pt-4">
+                <p class="text-[10px] font-semibold uppercase tracking-widest text-slate-600">General</p>
+            </div>
+            <nav class="space-y-1 px-3">
+                <a href="/app1/vista1/" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-400 transition hover:bg-slate-800/60 hover:text-white">
+                    <i class="fa-solid fa-gear w-5 text-left"></i>
+                    Ajustes
+                </a>
+                <a href="/app1/vista1/" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-400 transition hover:bg-slate-800/60 hover:text-white">
+                    <i class="fa-solid fa-circle-question w-5 text-left"></i>
+                    Centro de Ayuda
+                </a>
+            </nav>
+
+            <div class="m-3 rounded-2xl border border-slate-800/60 bg-gradient-to-br from-slate-900 to-slate-900/50 p-3 backdrop-blur-md">
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <img class="h-10 w-10 rounded-full object-cover ring-2 ring-indigo-500/50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80" alt="Avatar">
+                        <span class="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-slate-900 bg-emerald-400"></span>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="truncate text-sm font-semibold">Víctor García</p>
+                        <p class="text-[11px] font-medium text-emerald-400">
+                            <i class="fa-solid fa-circle text-[7px] align-middle"></i>
+                            <span class="ml-1">Online</span>
+                        </p>
+                    </div>
+                    <i class="fa-solid fa-ellipsis text-slate-500"></i>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div id="overlay" class="fixed inset-0 z-30 hidden bg-slate-950/60 backdrop-blur-sm lg:hidden"></div>
+
+    <main class="relative lg:pl-64">
+        <header class="sticky top-0 z-20 border-b border-slate-800/60 bg-slate-950/70 backdrop-blur-md">
+            <div class="flex items-center gap-4 px-4 py-3 sm:px-6">
+                <button id="btnSidebar" class="rounded-lg border border-slate-800/60 bg-slate-900/60 px-3 py-2 text-slate-300 hover:text-white lg:hidden">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="relative hidden md:block">
+                    <i class="fa-solid fa-magnifying-glass pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-sm text-slate-500"></i>
+                    <input id="globalSearch" type="text" placeholder="Buscar proyectos, clientes, métricas..." class="w-80 rounded-xl border border-slate-800/60 bg-slate-900/60 py-2 pl-10 pr-16 text-sm text-slate-200 placeholder-slate-500 outline-none ring-slate-800/60 transition focus:border-indigo-500/50 focus:ring-2 focus:ring-indigo-500/20">
+                    <kbd class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 rounded-md border border-slate-700/80 bg-slate-800/80 px-1.5 py-0.5 text-[10px] font-semibold text-slate-400">Ctrl&nbsp;+&nbsp;K</kbd>
+                </div>
+
+                <div class="ml-auto flex items-center gap-3">
+                    <span class="hidden items-center gap-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-[11px] font-semibold text-neon-300 sm:flex">
+                        <i class="fa-solid fa-cloud-bolt"></i> Live Sync
+                    </span>
+
+                    <div class="relative">
+                        <button data-dropdown="notifMenu" class="relative flex h-10 w-10 items-center justify-center rounded-xl border border-slate-800/60 bg-slate-900/60 text-slate-300 transition hover:border-slate-700 hover:text-white">
+                            <i class="fa-solid fa-bell"></i>
+                            <span class="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-rose-500 text-[9px] font-bold text-white animate-pulse">3</span>
+                            <span class="absolute right-1.5 top-1.5 h-2 w-2 animate-ping rounded-full bg-rose-400"></span>
+                        </button>
+                        <div id="notifMenu" class="dropdown-menu absolute right-0 mt-2 w-72 rounded-2xl border border-slate-800/60 bg-slate-900/95 p-2 shadow-2xl backdrop-blur-md hidden">
+                            <p class="px-3 py-2 text-xs font-semibold uppercase tracking-widest text-slate-500">Notificaciones</p>
+                            <a href="/app1/vista1/" class="flex gap-3 rounded-xl px-3 py-2.5 hover:bg-slate-800/60">
+                                <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-indigo-400"></span>
+                                <span class="text-xs text-slate-300">Deploy <b>v2.4.1</b> completado con éxito en producción.</span>
+                            </a>
+                            <a href="/app1/vista1/" class="flex gap-3 rounded-xl px-3 py-2.5 hover:bg-slate-800/60">
+                                <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-amber-400"></span>
+                                <span class="text-xs text-slate-300">El proyecto <b>Orion API</b> está pendiente de revisión.</span>
+                            </a>
+                            <a href="/app1/vista1/" class="flex gap-3 rounded-xl px-3 py-2.5 hover:bg-slate-800/60">
+                                <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-emerald-400"></span>
+                                <span class="text-xs text-slate-300">Se registró un nuevo cliente: <b>Helix Corp</b>.</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <button data-dropdown="profileMenu" class="flex items-center gap-2.5 rounded-xl border border-slate-800/60 bg-slate-900/60 p-1.5 pr-3 text-sm transition hover:border-slate-700">
+                            <div class="relative">
+                                <img class="h-8 w-8 rounded-lg object-cover" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80" alt="Perfil">
+                                <span class="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full border-2 border-slate-900 bg-emerald-400"></span>
+                            </div>
+                            <span class="hidden font-semibold text-slate-200 sm:block">Víctor</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-slate-500"></i>
+                        </button>
+                        <div id="profileMenu" class="dropdown-menu absolute right-0 mt-2 w-56 rounded-2xl border border-slate-800/60 bg-slate-900/95 p-2 shadow-2xl backdrop-blur-md hidden">
+                            <div class="border-b border-slate-800/60 px-3 py-2.5">
+                                <p class="text-sm font-semibold">vgarciadev</p>
+                                <p class="text-xs text-slate-500">vgarciadev@agency.io</p>
+                            </div>
+                            <a href="/app1/vista1/" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-slate-300 hover:bg-slate-800/60"><i class="fa-solid fa-user w-4 text-slate-500"></i> Mi perfil</a>
+                            <a href="/app1/vista1/" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-slate-300 hover:bg-slate-800/60"><i class="fa-solid fa-arrow-right-from-bracket w-4 text-slate-500"></i> Cerrar sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+            <div class="mb-8">
+                <div class="mb-1 flex items-center gap-2 text-xs font-medium text-slate-500">
+                    <i class="fa-solid fa-house"></i>
+                    <span>/</span>
+                    <span class="text-indigo-400">Analytics</span>
+                </div>
+                <div class="flex flex-wrap items-end justify-between gap-4">
+                    <div>
+                        <h1 class="bg-gradient-to-r from-white via-indigo-200 to-violet-300 bg-clip-text text-3xl font-extrabold tracking-tight text-transparent sm:text-4xl">
+                            Vision Board Analytics
+                        </h1>
+                        <p class="mt-2 max-w-xl text-sm text-slate-400">
+                            Visión centralizada del rendimiento de servicios, infraestructura y operación de la agencia en tiempo real.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button class="rounded-xl border border-slate-800/60 bg-slate-900/60 px-4 py-2.5 text-sm font-semibold text-slate-300 transition hover:text-white">
+                            <i class="fa-solid fa-download mr-2"></i>Exportar
+                        </button>
+                        <a href="/app1/vista2/" class="group rounded-xl bg-gradient-to-r from-indigo-600 to-violet-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-indigo-600/25 transition hover:shadow-neon-violet">
+                            <i class="fa-solid fa-cubes mr-2"></i>Ir a Módulos
+                            <i class="fa-solid fa-arrow-right ml-1 text-xs transition group-hover:translate-x-0.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                <div class="group rounded-2xl border border-slate-800/60 bg-gradient-to-br from-slate-900 to-slate-900/50 p-5 backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-indigo-500/40 hover:shadow-neon-indigo">
+                    <div class="flex items-start justify-between">
+                        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-500/15 text-indigo-400">
+                            <i class="fa-solid fa-project-diagram"></i>
+                        </div>
+                        <span class="flex items-center gap-1 rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-bold text-emerald-400">
+                            <i class="fa-solid fa-arrow-trend-up"></i> +14.2%
+                        </span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium text-slate-400">Proyectos Activos</p>
+                    <p class="mt-1 text-3xl font-extrabold tracking-tight text-white">12</p>
+                    <p class="mt-2 flex items-center gap-1.5 text-xs text-slate-500">
+                        <i class="fa-solid fa-database text-indigo-400"></i>de 28 proyectos registrados
+                    </p>
+                </div>
+
+                <div class="group rounded-2xl border border-slate-800/60 bg-gradient-to-br from-slate-900 to-slate-900/50 p-5 backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-violet-500/40 hover:shadow-neon-violet">
+                    <div class="flex items-start justify-between">
+                        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-500/15 text-violet-400">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <span class="flex items-center gap-1 rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-bold text-emerald-400">
+                            <i class="fa-solid fa-arrow-trend-up"></i> +8.6%
+                        </span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium text-slate-400">Clientes Registrados</p>
+                    <p class="mt-1 text-3xl font-extrabold tracking-tight text-white">48</p>
+                    <p class="mt-2 flex items-center gap-1.5 text-xs text-slate-500">
+                        <i class="fa-solid fa-address-card text-violet-400"></i>+3 nuevos este mes
+                    </p>
+                </div>
+
+                <div class="group rounded-2xl border border-slate-800/60 bg-gradient-to-br from-slate-900 to-slate-900/50 p-5 backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-amber-500/40 hover:shadow-[0_0_0_1px_rgba(245,158,11,0.25),0_8px_32px_-8px_rgba(245,158,11,0.45)]">
+                    <div class="flex items-start justify-between">
+                        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-500/15 text-amber-400">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <span class="flex items-center gap-1 rounded-full bg-rose-500/10 px-2.5 py-1 text-xs font-bold text-rose-400">
+                            <i class="fa-solid fa-arrow-trend-down"></i> -2.1%
+                        </span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium text-slate-400">Soporte Pendiente</p>
+                    <p class="mt-1 text-3xl font-extrabold tracking-tight text-white">3</p>
+                    <p class="mt-2 flex items-center gap-1.5 text-xs text-slate-500">
+                        <i class="fa-solid fa-headphones text-amber-400"></i>tiempo medio 00:47:12
+                    </p>
+                </div>
+
+                <div class="group rounded-2xl border border-slate-800/60 bg-gradient-to-br from-slate-900 to-slate-900/50 p-5 backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-neon-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.25),0_8px_32px_-8px_rgba(6,182,212,0.45)]">
+                    <div class="flex items-start justify-between">
+                        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-neon-500/15 text-neon-400">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <span class="flex items-center gap-1 rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-bold text-emerald-400">
+                            <i class="fa-solid fa-arrow-trend-up"></i> +12.3%
+                        </span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium text-slate-400">Ingresos del Mes</p>
+                    <p class="mt-1 text-3xl font-extrabold tracking-tight text-white">$4,500</p>
+                    <p class="mt-2 flex items-center gap-1.5 text-xs text-slate-500">
+                        <i class="fa-solid fa-arrow-up text-neon-400"></i>$495 vs. mes anterior
+                    </p>
+                </div>
+            </section>
+
+            <section class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-12">
+                <div class="lg:col-span-8">
+                    <div class="overflow-hidden rounded-2xl border border-slate-800/60 bg-gradient-to-br from-slate-900 to-slate-900/50 backdrop-blur-md">
+                        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/60 px-5 py-4">
+                            <div>
+                                <h2 class="flex items-center gap-2 text-base font-bold text-white">
+                                    <i class="fa-solid fa-table-list text-indigo-400"></i> Proyectos Recientes
+                                </h2>
+                                <p class="text-xs text-slate-500">Últimos registros sincronizados · Feb 2026</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400">
+                                    <i class="fa-solid fa-circle text-[7px] animate-pulse"></i> Sincronizado
+                                </span>
+                                <button class="rounded-lg border border-slate-800/60 bg-slate-900/60 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-white">
+                                    <i class="fa-solid fa-filter mr-1"></i>Filtrar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm">
+                                <thead>
+                                    <tr class="border-b border-slate-800/60 text-xs font-semibold uppercase tracking-widest text-slate-500">
+                                        <th class="px-5 py-3.5 font-semibold">Proyecto</th>
+                                        <th class="px-4 py-3.5 font-semibold">Cliente</th>
+                                        <th class="px-4 py-3.5 font-semibold">Estado</th>
+                                        <th class="px-4 py-3.5 font-semibold">Fecha</th>
+                                        <th class="px-4 py-3.5 text-right font-semibold">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-800/60">
+                                    <tr class="transition hover:bg-white/[0.03]">
+                                        <td class="px-5 py-4">
+                                            <div class="flex items-center gap-3">
+                                                <img class="h-9 w-9 rounded-lg object-cover ring-1 ring-slate-700/60" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=200&q=80" alt="Orion API">
+                                                <div>
+                                                    <p class="font-semibold text-white">Orion API Gateway</p>
+                                                    <p class="text-xs text-slate-500">#PRJ-104 · Backend</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">
+                                            <div class="flex items-center gap-2">
+                                                <img class="h-7 w-7 rounded-full object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Cliente">
+                                                <span class="text-slate-300">Helix Corp</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4"><span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-400"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Active</span></td>
+                                        <td class="px-4 py-4 text-slate-400">Feb 12, 2026</td>
+                                        <td class="px-4 py-4 text-right">
+                                            <button data-dropdown="row1Menu" class="rounded-lg border border-slate-800/60 bg-slate-900/60 px-2.5 py-1.5 text-slate-400 transition hover:text-white"><i class="fa-solid fa-ellipsis"></i></button>
+                                            <div id="row1Menu" class="dropdown-menu absolute right-0 mt-1 w-44 rounded-xl border border-slate-800/60 bg-slate-900/95 p-1.5 shadow-2xl backdrop-blur-md hidden">
+                                                <button class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-xs text-slate-300 hover:bg-slate-800/60"><i class="fa-solid fa-eye text-slate-500"></i>Ver detalle</button>
+                                                <button class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-xs text-slate-300 hover:bg-slate-800/60"><i class="fa-solid fa-pen text-slate-500"></i>Editar</button>
+                                                <button class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-xs text-rose-400 hover:bg-rose-500/10"><i class="fa-solid fa-trash"></i>Eliminar</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="transition hover:bg-white/[0.03]">
+                                        <td class="px-5 py-4">
+                                            <div class="flex items-center gap-3">
+                                                <img class="h-9 w-9 rounded-lg object-cover ring-1 ring-slate-700/60" src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=200&q=80" alt="Nexus CMS">
+                                                <div>
+                                                    <p class="font-semibold text-white">Nexus CMS Platform</p>
+                                                    <p class="text-xs text-slate-500">#PRJ-108 · Frontend</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">
+                                            <div class="flex items-center gap-2">
+                                                <img class="h-7 w-7 rounded-full object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Cliente">
+                                                <span class="text-slate-300">Delta Corp</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4"><span class="inline-flex items-center gap-1.5 rounded-full border border-amber-500/20 bg-amber-500/10 px-3 py-1 text-xs font-bold text-amber-400"><span class="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse"></span>Pending</span></td>
+                                        <td class="px-4 py-4 text-slate-400">Feb 09, 2026</td>
+                                        <td class="px-4 py-4 text-right">
+                                            <button data-dropdown="row2Menu" class="rounded-lg border border-slate-800/60 bg-slate-900/60 px-2.5 py-1.5 text-slate-400 transition hover:text-white"><i class="fa-solid fa-ellipsis"></i></button>
+                                            <div id="row2Menu" class="dropdown-menu absolute right-0 mt-1 w-44 rounded-xl border border-slate-800/60 bg-slate-900/95 p-1.5 shadow-2xl backdrop-blur-md hidden">
+                                                <button class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-xs text-slate-300 hover:bg-slate-800/60"><i class="fa-solid fa-eye text-slate-500"></i>Ver detalle</button>
+                                                <button class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-xs text-slate-300 hover:bg-slate-800/60"><i class="fa-solid fa-pen text-slate-500"></i>Editar</button>
+                                                <button class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-xs text-rose-400 hover:bg-rose-500/10"><i class="fa-solid fa-trash"></i>Eliminar</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="transition hover:bg-white/[0.03]">
+                                        <td class="px-5 py-4">
+                                            <div class="flex items-center gap-3">
+                                                <img class="h-9 w-9 rounded-lg object-cover ring-1 ring-slate-700/60" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=200&q=80" alt="Atlas Data">
+                                                <div>
+                                                    <p class="font-semibold text-white">Atlas Data Pipeline</p>
+                                                    <p class="text-xs text-slate-500">#PRJ-112 · Data</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4">
+                                            <div class="flex items-center gap-2">
+                                                <img class="h-7 w-7 rounded-full object-cover" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80" alt="Cliente">
+                                                <span class="text-slate-300">Sigma Studio</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4"><span class="inline-flex items-center gap-1.5 rounded-full border border-rose-500/20 bg-rose-500/10 px-3 py-1 text-xs font-bold text-rose-400"><span class="h-1.5 w-1.5 rounded-full bg-rose-400"></span>Failed</span></td>
+                                        <td class="px-4 py-4 text-slate-400">Feb 04, 2026</td>
+                                        <td class="px-4 py-4 text-right">
+                                            <button data-dropdown="row3Menu" class="rounded-lg border border-slate-800/60 bg-slate-900/60 px-2.5 py-1.5 text-slate-400 transition hover:text-white"><i class="fa-solid fa-ellipsis"></i></button>
+                                            <div id="row3Menu" class="dropdown-menu absolute right-0 mt-1 w-44 rounded-xl border border-slate-800/60 bg-slate-900/95 p-1.5 shadow-2xl backdrop-blur-md hidden">
+                                                <button class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-xs text-slate-300 hover:bg-slate-800/60"><i class="fa-solid fa-eye text-slate-500"></i>Ver detalle</button>
+                                                <button class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-xs text-slate-300 hover:bg-slate-800/60"><i class="fa-solid fa-pen text-slate-500"></i>Editar</button>
+                                                <button class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-xs text-rose-400 hover:bg-rose-500/10"><i class="fa-solid fa-trash"></i>Eliminar</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800/60 px-5 py-3.5">
+                            <p class="text-xs text-slate-500">Mostrando <b class="text-slate-300">3</b> de <b class="text-slate-300">18</b> proyectos</p>
+                            <div class="flex items-center gap-1.5">
+                                <button class="rounded-lg border border-slate-800/60 px-3 py-1.5 text-xs text-slate-400 hover:text-white"><i class="fa-solid fa-chevron-left"></i></button>
+                                <button class="rounded-lg bg-gradient-to-r from-indigo-600 to-violet-500 px-3 py-1.5 text-xs font-bold text-white">1</button>
+                                <button class="rounded-lg border border-slate-800/60 px-3 py-1.5 text-xs text-slate-400 hover:text-white">2</button>
+                                <button class="rounded-lg border border-slate-800/60 px-3 py-1.5 text-xs text-slate-400 hover:text-white"><i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6 lg:col-span-4">
+                    <div class="rounded-2xl border border-slate-800/60 bg-gradient-to-br from-slate-900 to-slate-900/50 p-5 backdrop-blur-md">
+                        <div class="flex items-center justify-between">
+                            <h2 class="flex items-center gap-2 text-base font-bold text-white">
+                                <i class="fa-solid fa-heart-pulse text-rose-400"></i> Health Status
+                            </h2>
+                            <span class="flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-bold text-emerald-400">
+                                <i class="fa-solid fa-circle text-[7px] animate-ping"></i> Operacional
+                            </span>
+                        </div>
+                        <p class="mt-1 text-xs text-slate-500">Infraestructura del clúster · 3 nodos en línea</p>
+
+                        <div class="mt-5 space-y-4">
+                            <div>
+                                <div class="mb-1.5 flex items-center justify-between text-xs">
+                                    <span class="font-semibold text-slate-300"><i class="fa-solid fa-microchip mr-1.5 text-indigo-400"></i>CPU Load</span>
+                                    <span class="font-bold text-indigo-300">82%</span>
+                                </div>
+                                <div class="h-2 overflow-hidden rounded-full bg-slate-800/80">
+                                    <div class="h-full origin-left rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 animate-grow" style="width:82%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mb-1.5 flex items-center justify-between text-xs">
+                                    <span class="font-semibold text-slate-300"><i class="fa-solid fa-memory mr-1.5 text-violet-400"></i>Memory Usage</span>
+                                    <span class="font-bold text-violet-300">64%</span>
+                                </div>
+                                <div class="h-2 overflow-hidden rounded-full bg-slate-800/80">
+                                    <div class="h-full origin-left rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 animate-grow [animation-delay:150ms]" style="width:64%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mb-1.5 flex items-center justify-between text-xs">
+                                    <span class="font-semibold text-slate-300"><i class="fa-solid fa-hard-drive mr-1.5 text-neon-400"></i>Disk I/O</span>
+                                    <span class="font-bold text-neon-300">48%</span>
+                                </div>
+                                <div class="h-2 overflow-hidden rounded-full bg-slate-800/80">
+                                    <div class="h-full origin-left rounded-full bg-gradient-to-r from-cyan-400 to-sky-500 animate-grow [animation-delay:300ms]" style="width:48%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 grid grid-cols-3 gap-3">
+                            <div class="rounded-xl border border-slate-800/60 bg-slate-900/60 p-3 text-center">
+                                <p class="text-lg font-extrabold text-white">99.98%</p>
+                                <p class="text-[11px] text-slate-500">Uptime</p>
+                            </div>
+                            <div class="rounded-xl border border-slate-800/60 bg-slate-900/60 p-3 text-center">
+                                <p class="text-lg font-extrabold text-white">24<span class="text-xs text-slate-500">ms</span></p>
+                                <p class="text-[11px] text-slate-500">Latencia</p>
+                            </div>
+                            <div class="rounded-xl border border-slate-800/60 bg-slate-900/60 p-3 text-center">
+                                <p class="text-lg font-extrabold text-white">12.4<span class="text-xs text-slate-500">k</span></p>
+                                <p class="text-[11px] text-slate-500">Requests</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overflow-hidden rounded-2xl border border-slate-800/60 bg-gradient-to-br from-slate-900 to-slate-900/50 backdrop-blur-md">
+                        <img class="h-36 w-full object-cover" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Última actualización">
+                        <div class="p-5">
+                            <h3 class="flex items-center gap-2 text-sm font-bold text-white">
+                                <i class="fa-solid fa-clock-rotate-left text-indigo-400"></i> Última Actualización
+                            </h3>
+                            <p class="mt-2 text-xs leading-relaxed text-slate-400">
+                                Release <b class="text-slate-200">v2.4.1</b> desplegado hace 12 minutos. Todos los servicios operan con normalidad y las cachés fueron invalidadas correctamente.
+                            </p>
+                            <div class="mt-3 flex items-center justify-between border-t border-slate-800/60 pt-3">
+                                <span class="text-[11px] text-slate-500">SHA <code class="text-slate-400">9f2c41a</code></span>
+                                <span class="text-[11px] font-semibold text-emerald-400"><i class="fa-solid fa-check-circle mr-1"></i>Deploy exitoso</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="mt-8 flex flex-col items-center justify-between gap-3 border-t border-slate-800/60 pt-5 sm:flex-row">
+                <p class="text-xs text-slate-500">© 2026 Agencia Digital · Programación Back End</p>
+                <div class="flex items-center gap-4 text-xs text-slate-500">
+                    <span>App <b class="text-slate-300">v2.4.1</b></span>
+                    <span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>API <b class="text-emerald-400">Online</b></span>
+                    <span>Build <code class="text-slate-400">9f2c41a</code></span>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        document.getElementById('btnSidebar').addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        });
+        overlay.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
+        });
+
+        document.querySelectorAll('[data-dropdown]').forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.stopPropagation();
+                const menu = document.getElementById(btn.getAttribute('data-dropdown'));
+                document.querySelectorAll('.dropdown-menu').forEach(m => { if (m !== menu) m.classList.add('hidden'); });
+                menu.classList.toggle('hidden');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('hidden'));
+        });
+
+        document.addEventListener('keydown', e => {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+                e.preventDefault();
+                document.getElementById('globalSearch').focus();
+            }
+        });
+    </script>
+</body>
+</html>
