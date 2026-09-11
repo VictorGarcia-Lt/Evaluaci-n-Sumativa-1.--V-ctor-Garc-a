@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHER AI Engine | El Futuro del Cómputo Autónomo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient-x': 'gradientX 8s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2.5s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        gradientX: {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotateX(6deg) rotateY(-6deg)' },
+                            '50%': { transform: 'translateY(-14px) rotateX(6deg) rotateY(-6deg)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { 'box-shadow': '0 0 20px rgba(6,182,212,0.5), 0 0 40px rgba(217,70,239,0.3)' },
+                            '50%': { 'box-shadow': '0 0 35px rgba(6,182,212,0.9), 0 0 70px rgba(217,70,239,0.6)' },
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden">
+
+    <!---------------------------------- HEADER / NAVBAR ------------------------------------->
+    <header class="fixed top-0 inset-x-0 z-50 bg-slate-950/40 backdrop-blur-xl border-b border-white/5 transition-all">
+        <nav class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-fuchsia-500 flex items-center justify-center shadow-lg drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-brain text-white text-lg"></i>
+                </div>
+                <span class="font-display font-bold text-lg tracking-tight">
+                    <span class="text-white">AETHER</span>
+                    <span class="text-cyan-400 drop-shadow-[0_0_15px_rgba(34,211,238,0.8)]"> // </span>
+                    <span class="bg-gradient-to-r from-cyan-400 to-fuchsia-500 bg-clip-text text-transparent">AI</span>
+                </span>
+            </a>
+
+            <!-- Menu -->
+            <div class="hidden md:flex items-center gap-1">
+                <a href="#inicio" class="px-4 py-2 text-sm text-slate-300 hover:text-cyan-300 hover:text-glow relative group transition-colors font-medium">
+                    <span class="relative z-10">Inicio</span>
+                    <span class="absolute inset-x-4 bottom-1 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform origin-center"></span>
+                </a>
+                <a href="#caracteristicas" class="px-4 py-2 text-sm text-slate-300 hover:text-cyan-300 relative group transition-colors font-medium">
+                    <span class="relative z-10">Características</span>
+                    <span class="absolute inset-x-4 bottom-1 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform origin-center"></span>
+                </a>
+                <a href="#showcase" class="px-4 py-2 text-sm text-slate-300 hover:text-cyan-300 relative group transition-colors font-medium">
+                    <span class="relative z-10">Showcase</span>
+                    <span class="absolute inset-x-4 bottom-1 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform origin-center"></span>
+                </a>
+            </div>
+
+            <!-- CTA -->
+            <a href="/app2/vista2/"
+               class="px-5 py-2.5 rounded-full text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-fuchsia-500 animate-pulse-glow hover:scale-105 active:scale-95 transition-all duration-300">
+                <i class="fa-solid fa-cube mr-2"></i>Explorar Módulos
+            </a>
+        </nav>
+    </header>
+
+    <!---------------------------------- SECTION 1: HERO PARALLAX ------------------------------------->
+    <section id="inicio" class="relative min-h-screen bg-fixed bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000&auto=format&fit=crop');">
+        <!-- Overlay degradado -->
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/60 to-slate-950"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 min-h-screen flex flex-col items-center justify-center text-center">
+            <!-- Badge -->
+            <div class="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-cyan-500/30 backdrop-blur-xl text-xs text-cyan-300 font-medium tracking-widest uppercase animate-float">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+                </span>
+                Motor Cognitivo de 5ª Generación
+            </div>
+
+            <!-- Titulo gigante -->
+            <h1 class="font-display font-bold leading-[1.05] tracking-tight text-5xl sm:text-7xl lg:text-8xl max-w-5xl">
+                <span class="bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-cyan-400 bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)]">
+                    EL FUTURO DEL CÓMPUTO AUTÓNOMO
+                </span>
+            </h1>
+
+            <!-- Subtitulo -->
+            <p class="mt-8 max-w-2xl text-base sm:text-lg text-slate-300 leading-relaxed">
+                Aether AI Engine redefine los límites de la inteligencia artificial con una arquitectura de
+                <span class="text-cyan-300 font-semibold">razonamiento autónomo</span>,
+                <span class="text-fuchsia-400 font-semibold">percepción multimodal</span> y
+                <span class="text-emerald-300 font-semibold">aprendizaje continuo</span> en tiempo real.
+            </p>
+
+            <!-- CTA -->
+            <div class="mt-12 flex flex-col sm:flex-row items-center gap-5">
+                <a href="/app2/vista2/"
+                   class="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-display font-bold text-lg text-slate-950 bg-gradient-to-r from-cyan-400 to-fuchsia-500 animate-pulse-glow hover:scale-105 active:scale-95 transition-all duration-300">
+                    Iniciar con Aether
+                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
+                </a>
+                <a href="#showcase" class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-display font-semibold text-lg text-cyan-300 border border-cyan-500/30 bg-white/5 backdrop-blur-xl hover:bg-cyan-500/10 hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] transition-all duration-300">
+                    <i class="fa-solid fa-circle-play"></i>
+                    Ver demo
+                </a>
+            </div>
+
+            <!-- Scroll indicator -->
+            <a href="#caracteristicas" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-400 hover:text-cyan-300 transition-colors animate-bounce">
+                <i class="fa-solid fa-chevron-down text-xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!---------------------------------- SECTION 2: GRID DE CARACTERISTICAS 3D ------------------------------------->
+    <section id="caracteristicas" class="relative py-24 lg:py-32 bg-slate-950 overflow-hidden">
+        <!-- Glow de fondo -->
+        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-[500px] h-[300px] bg-fuchsia-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-cyan-400 font-mono text-sm tracking-widest uppercase mb-3">// Arquitectura Núcleo</p>
+                <h2 class="font-display font-bold text-4xl sm:text-5xl text-white">Potencia de cálculo sin precedentes</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 [perspective:1200px]">
+
+                <!-- Card 1 -->
+                <div class="relative rounded-3xl p-8 bg-white/5 backdrop-blur-xl border border-cyan-500/30 hover:border-cyan-400/60 hover:shadow-[0_20px_60px_-15px_rgba(6,182,212,0.5)] transition-all duration-500 [transform:rotateX(8deg)] hover:[transform:rotateX(0deg)_translateY(-10px)]">
+                    <!-- Icono gigante -->
+                    <div class="mb-8 w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-fuchsia-500/20 border border-cyan-500/30 flex items-center justify-center shadow-[0_0_40px_rgba(6,182,212,0.25)]">
+                        <i class="fa-solid fa-microchip text-cyan-400 text-4xl"></i>
+                    </div>
+                    <div class="flex items-end gap-2 mb-3">
+                        <span class="font-display font-bold text-5xl bg-gradient-to-r from-cyan-400 to-cyan-200 bg-clip-text text-transparent">100K</span>
+                        <span class="text-slate-400 text-sm mb-2 font-medium">TOPS</span>
+                    </div>
+                    <h3 class="font-display font-semibold text-xl text-white mb-2">Cómputo Neural</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">1,024 NPU en silicio dedicado ejecutan inferencias a 100,000 tera-operaciones por segundo con latencia sub-milisegundo.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="relative rounded-3xl p-8 bg-white/5 backdrop-blur-xl border border-fuchsia-500/30 hover:border-fuchsia-400/60 hover:shadow-[0_20px_60px_-15px_rgba(217,70,239,0.5)] transition-all duration-500 [transform:rotateY(0deg)_translateY(16px)_rotateX(8deg)] hover:[transform:rotateY(0deg)_translateY(6px)_rotateX(0deg)]">
+                    <div class="mb-8 w-20 h-20 rounded-2xl bg-gradient-to-br from-fuchsia-500/20 to-cyan-500/20 border border-fuchsia-500/30 flex items-center justify-center shadow-[0_0_40px_rgba(217,70,239,0.25)]">
+                        <i class="fa-solid fa-shield-halved text-fuchsia-400 text-4xl"></i>
+                    </div>
+                    <div class="flex items-end gap-2 mb-3">
+                        <span class="font-display font-bold text-5xl bg-gradient-to-r from-fuchsia-400 to-fuchsia-200 bg-clip-text text-transparent">99.99%</span>
+                        <span class="text-slate-400 text-sm mb-2 font-medium">Confiabilidad</span>
+                    </div>
+                    <h3 class="font-display font-semibold text-xl text-white mb-2">Seguridad Autónoma</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Cifrado post-cuántico, aislamiento por enclave y autodefensa adaptativa ante amenazas emergentes en tiempo real.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="relative rounded-3xl p-8 bg-white/5 backdrop-blur-xl border border-emerald-500/30 hover:border-emerald-400/60 hover:shadow-[0_20px_60px_-15px_rgba(16,185,129,0.5)] transition-all duration-500 [transform:rotateY(0deg)_rotateX(8deg)] hover:[transform:rotateY(0deg)_rotateX(0deg)_translateY(-10px)]">
+                    <div class="mb-8 w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 border border-emerald-500/30 flex items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.25)]">
+                        <i class="fa-solid fa-satellite-dish text-emerald-400 text-4xl"></i>
+                    </div>
+                    <div class="flex items-end gap-2 mb-3">
+                        <span class="font-display font-bold text-5xl bg-gradient-to-r from-emerald-400 to-emerald-200 bg-clip-text text-transparent">0.048</span>
+                        <span class="text-slate-400 text-sm mb-2 font-medium">ms latencia</span>
+                    </div>
+                    <h3 class="font-display font-semibold text-xl text-white mb-2">Procesamiento Edge</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Inferencia en el extremo con sincronización cuantizada. Escala global distribuida en 214 nodos de borde.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---------------------------------- SECTION 3: PARALLAX SHOWCASE ------------------------------------->
+    <section id="showcase" class="relative min-h-screen bg-fixed bg-cover bg-center flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop');">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-slate-950/90"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center py-32">
+            <p class="font-mono text-sm text-cyan-400 tracking-widest uppercase mb-6"><i class="fa-solid fa-chevron-left mr-2 text-[10px]"></i>Showcase<i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i></p>
+
+            <h2 class="font-display font-bold text-4xl sm:text-6xl lg:text-7xl leading-tight">
+                <span class="bg-gradient-to-r from-white via-cyan-200 to-fuchsia-300 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(34,211,238,0.4)]">
+                    Procesamiento cuántico a 100,000 TOPS por segundo
+                </span>
+            </h2>
+
+            <p class="mt-8 text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                Cada pulso neuronal de Aether atraviesa 8.5 billones de parámetros activos.
+                La frontera entre la máquina y el pensamiento humano se desdibuja hoy.
+            </p>
+
+            <!-- Contador de metricas -->
+            <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="px-4 py-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-cyan-500/30 hover:border-cyan-400/60 transition-colors">
+                    <p class="font-display font-bold text-3xl text-cyan-300">8.5B</p>
+                    <p class="mt-1 text-xs text-slate-400 uppercase tracking-wider">Parametros</p>
+                </div>
+                <div class="px-4 py-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-fuchsia-500/30 hover:border-fuchsia-400/60 transition-colors">
+                    <p class="font-display font-bold text-3xl text-fuchsia-300">214</p>
+                    <p class="mt-1 text-xs text-slate-400 uppercase tracking-wider">Nodos Edge</p>
+                </div>
+                <div class="px-4 py-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-emerald-500/30 hover:border-emerald-400/60 transition-colors">
+                    <p class="font-display font-bold text-3xl text-emerald-300">100K</p>
+                    <p class="mt-1 text-xs text-slate-400 uppercase tracking-wider">TOPS</p>
+                </div>
+                <div class="px-4 py-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-rose-500/30 hover:border-rose-400/60 transition-colors">
+                    <p class="font-display font-bold text-3xl text-rose-300">0 Ms</p>
+                    <p class="mt-1 text-xs text-slate-400 uppercase tracking-wider">Downtime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---------------------------------- FOOTER PREMIUM ------------------------------------->
+    <footer class="relative bg-slate-950 border-t border-white/5">
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-fuchsia-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <!-- Marca -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-fuchsia-500 flex items-center justify-center shadow-lg drop-shadow-[0_0_20px_rgba(6,182,212,0.5)]">
+                            <i class="fa-solid fa-brain text-white text-base"></i>
+                        </div>
+                        <span class="font-display font-bold text-lg text-white">AETHER<span class="text-cyan-400"> // </span><span class="bg-gradient-to-r from-cyan-400 to-fuchsia-500 bg-clip-text text-transparent">AI</span></span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+                        Motor de computo autónomo de última generación. Diseñado para pensar más rápido que el tiempo real.
+                    </p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-300 hover:border-cyan-500/40 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-300 hover:border-cyan-500/40 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-300 hover:border-cyan-500/40 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-300 hover:border-cyan-500/40 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Enlaces rapidos -->
+                <div>
+                    <h4 class="font-display font-semibold text-white mb-5 text-sm tracking-wider uppercase">Producto</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="/app2/vista2/" class="text-slate-400 hover:text-cyan-300 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-cyan-500"></i>Auditoría Logs</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-cyan-300 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-cyan-500"></i>Módulos</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-cyan-300 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-cyan-500"></i>API & Integraciones</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-cyan-300 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-cyan-500"></i>Documentación</a></li>
+                    </ul>
+                </div>
+
+                <!-- Estado de red -->
+                <div>
+                    <h4 class="font-display font-semibold text-white mb-5 text-sm tracking-wider uppercase">Estado de Red</h4>
+                    <div class="p-4 rounded-xl bg-white/5 backdrop-blur-xl border border-emerald-500/30">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs text-slate-300 font-medium">Infraestructura Global</span>
+                            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold">
+                                <span class="relative flex h-2 w-2">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                </span>
+                                OPERATIVA
+                            </span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
+                            <span>214 nodos</span>
+                            <span>99.98%</span>
+                        </div>
+                        <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full w-[99.98%] bg-gradient-to-r from-emerald-500 to-cyan-400 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-14 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 Aether AI Engine. Todos los derechos reservados.</p>
+                <p class="flex items-center gap-2 font-mono">
+                    <i class="fa-solid fa-circle-nodes text-cyan-500"></i>
+                    AETHER CORE v2.1.4 · Motor autónomo activo
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
