@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaStack — Vista 2 · Módulos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+                    },
+                    colors: {
+                        neon: { 300: '#67e8f9', 400: '#22d3ee', 500: '#06b6d4', 600: '#0891b2' },
+                        cyber: { 400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed' }
+                    },
+                    boxShadow: {
+                        'neon-indigo': '0 0 0 1px rgba(99,102,241,0.25), 0 8px 32px -8px rgba(99,102,241,0.45)',
+                        'neon-violet': '0 0 0 1px rgba(139,92,246,0.25), 0 8px 32px -8px rgba(139,92,246,0.45)'
+                    },
+                    keyframes: {
+                        floaty: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        blink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' }
+                        }
+                    },
+                    animation: {
+                        floaty: 'floaty 8s ease-in-out infinite',
+                        blink: 'blink 1s step-end infinite'
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen">
+
+    <div class="pointer-events-none fixed inset-0 overflow-hidden">
+        <div class="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-cyber-500/20 blur-3xl animate-floaty"></div>
+        <div class="absolute top-1/3 -right-32 h-96 w-96 rounded-full bg-indigo-600/20 blur-3xl animate-floaty"></div>
+        <div class="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-neon-500/10 blur-3xl"></div>
+    </div>
+
+    <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 -translate-x-full border-r border-slate-800/60 bg-slate-950/80 backdrop-blur-md transition-transform duration-300 lg:translate-x-0">
+        <div class="flex h-full flex-col">
+            <div class="flex items-center gap-3 px-5 py-5">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-500 shadow-lg shadow-indigo-600/30">
+                    <i class="fa-solid fa-bolt text-white text-lg"></i>
+                </div>
+                <div>
+                    <p class="text-base font-bold leading-tight">NovaStack</p>
+                    <p class="text-[11px] font-medium uppercase tracking-widest text-slate-500">Enterprise Suite</p>
+                </div>
+            </div>
+            <div class="px-5 pb-2">
+                <p class="text-[10px] font-semibold uppercase tracking-widest text-slate-600">Workspace</p>
+            </div>
+            <nav class="flex-1 space-y-1 px-3">
+                <a href="/app1/vista1/" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-400 transition hover:bg-slate-800/60 hover:text-white">
+                    <i class="fa-solid fa-chart-simple w-5 text-left"></i>Vista 1 - Analytics
+                </a>
+                <a href="/app1/vista2/" class="flex items-center gap-3 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-500 px-3 py-2.5 text-sm font-semibold text-white shadow-neon-indigo">
+                    <i class="fa-solid fa-cubes w-5 text-left"></i>Vista 2 - Módulos
+                </a>
+                <a href="/app1/vista1/" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-400 transition hover:bg-slate-800/60 hover:text-white">
+                    <i class="fa-solid fa-satellite-dish w-5 text-left"></i>Realtime Monitor
+                    <span class="ml-auto h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
+                </a>
+            </nav>
+            <div class="px-5 pb-2 pt-4">
+                <p class="text-[10px] font-semibold uppercase tracking-widest text-slate-600">General</p>
+            </div>
+            <nav class="space-y-1 px-3">
+                <a href="/app1/vista2/" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-400 transition hover:bg-slate-800/60 hover:text-white">
+                    <i class="fa-solid fa-gear w-5 text-left"></i>Ajustes
+                </a>
+                <a href="/app1/vista2/" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-400 transition hover:bg-slate-800/60 hover:text-white">
+                    <i class="fa-solid fa-circle-question w-5 text-left"></i>Centro de Ayuda
+                </a>
+            </nav>
+            <div class="m-3 rounded-2xl border border-slate-800/60 bg-gradient-to-br from-slate-900 to-slate-900/50 p-3 backdrop-blur-md">
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <img class="h-10 w-10 rounded-full object-cover ring-2 ring-indigo-500/50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80" alt="Avatar">
+                        <span class="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-slate-900 bg-emerald-400"></span>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="truncate text-sm font-semibold">Víctor García</p>
+                        <p class="text-[11px] font-medium text-emerald-400">
+                            <i class="fa-solid fa-circle text-[7px] align-middle"></i>
+                            <span class="ml-1">Online</span>
+                        </p>
+                    </div>
+                    <i class="fa-solid fa-ellipsis text-slate-500"></i>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div id="overlay" class="fixed inset-0 z-30 hidden bg-slate-950/60 backdrop-blur-sm lg:hidden"></div>
+
+    <main class="relative lg:pl-64">
+        <header class="sticky top-0 z-20 border-b border-slate-800/60 bg-slate-950/70 backdrop-blur-md">
+            <div class="flex items-center gap-4 px-4 py-3 sm:px-6">
+                <button id="btnSidebar" class="rounded-lg border border-slate-800/60 bg-slate-900/60 px-3 py-2 text-slate-300 hover:text-white lg:hidden">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="relative hidden md:block">
+                    <i class="fa-solid fa-magnifying-glass pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-sm text-slate-500"></i>
+                    <input id="globalSearch" type="text" placeholder="Buscar microservicios, módulos, integraciones..." class="w-80 rounded-xl border border-slate-800/60 bg-slate-900/60 py-2 pl-10 pr-16 text-sm text-slate-200 placeholder-slate-500 outline-none ring-slate-800/60 transition focus:border-indigo-500/50 focus:ring-2 focus:ring-indigo-500/20">
+                    <kbd class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 rounded-md border border-slate-700/80 bg-slate-800/80 px-1.5 py-0.5 text-[10px] font-semibold text-slate-400">Ctrl&nbsp;+&nbsp;K</kbd>
+                </div>
+                <div class="ml-auto flex items-center gap-3">
+                    <span class="hidden items-center gap-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-[11px] font-semibold text-neon-300 sm:flex">
+                        <i class="fa-solid fa-cloud-bolt"></i> Live Sync
+                    </span>
+                    <div class="relative">
+                        <button data-dropdown="notifMenu" class="relative flex h-10 w-10 items-center justify-center rounded-xl border border-slate-800/60 bg-slate-900/60 text-slate-300 transition hover:border-slate-700 hover:text-white">
+                            <i class="fa-solid fa-bell"></i>
+                            <span class="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-rose-500 text-[9px] font-bold text-white animate-pulse">3</span>
+                            <span class="absolute right-1.5 top-1.5 h-2 w-2 animate-ping rounded-full bg-rose-400"></span>
+                        </button>
+                        <div id="notifMenu" class="dropdown-menu absolute right-0 mt-2 w-72 rounded-2xl border border-slate-800/60 bg-slate-900/95 p-2 shadow-2xl backdrop-blur-md hidden">
+                            <p class="px-3 py-2 text-xs font-semibold uppercase tracking-widest text-slate-500">Notificaciones</p>
+                            <a href="/app1/vista2/" class="flex gap-3 rounded-xl px-3 py-2.5 hover:bg-slate-800/60">
+                                <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-indigo-400"></span>
+                                <span class="text-xs text-slate-300">Deploy <b>v2.4.1</b> completado con éxito en producción.</span>
+                            </a>
+                            <a href="/app1/vista2/" class="flex gap-3 rounded-xl px-3 py-2.5 hover:bg-slate-800/60">
+                                <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-amber-400"></span>
+                                <span class="text-xs text-slate-300">El servicio <b>OAuth2 Gateway</b> requiere rotación de secretos.</span>
+                            </a>
+                            <a href="/app1/vista2/" class="flex gap-3 rounded-xl px-3 py-2.5 hover:bg-slate-800/60">
+                                <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-emerald-400"></span>
+                                <span class="text-xs text-slate-300">Pipeline ETL procesó <b>1.2 TB</b> en la última ventana.</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <button data-dropdown="profileMenu" class="flex items-center gap-2.5 rounded-xl border border-slate-800/60 bg-slate-900/60 p-1.5 pr-3 text-sm transition hover:border-slate-700">
+                            <div class="relative">
+                                <img class="h-8 w-8 rounded-lg object-cover" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80" alt="Perfil">
+                                <span class="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full border-2 border-slate-900 bg-emerald-400"></span>
+                            </div>
+                            <span class="hidden font-semibold text-slate-200 sm:block">Víctor</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-slate-500"></i>
+                        </button>
+                        <div id="profileMenu" class="dropdown-menu absolute right-0 mt-2 w-56 rounded-2xl border border-slate-800/60 bg-slate-900/95 p-2 shadow-2xl backdrop-blur-md hidden">
+                            <div class="border-b border-slate-800/60 px-3 py-2.5">
+                                <p class="text-sm font-semibold">vgarciadev</p>
+                                <p class="text-xs text-slate-500">vgarciadev@agency.io</p>
+                            </div>
+                            <a href="/app1/vista2/" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-slate-300 hover:bg-slate-800/60"><i class="fa-solid fa-user w-4 text-slate-500"></i> Mi perfil</a>
+                            <a href="/app1/vista2/" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-slate-300 hover:bg-slate-800/60"><i class="fa-solid fa-arrow-right-from-bracket w-4 text-slate-500"></i> Cerrar sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+            <div class="mb-8">
+                <div class="mb-1 flex items-center gap-2 text-xs font-medium text-slate-500">
+                    <i class="fa-solid fa-house"></i>
+                    <span>/</span>
+                    <span class="text-indigo-400">Módulos</span>
+                </div>
+                <div class="flex flex-wrap items-end justify-between gap-4">
+                    <div>
+                        <h1 class="bg-gradient-to-r from-white via-indigo-200 to-violet-300 bg-clip-text text-3xl font-extrabold tracking-tight text-transparent sm:text-4xl">
+                            Catálogo de Microservicios &amp; Integraciones
+                        </h1>
+                        <p class="mt-2 max-w-xl text-sm text-slate-400">
+                            Componentes distribuidos, monitorizados y desplegables desde el ecosistema NovaStack.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button class="rounded-xl border border-slate-800/60 bg-slate-900/60 px-4 py-2.5 text-sm font-semibold text-slate-300 transition hover:text-white">
+                            <i class="fa-solid fa-rotate mr-2"></i>Recargar
+                        </button>
+                        <button class="rounded-xl bg-gradient-to-r from-indigo-600 to-violet-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-indigo-600/25 transition hover:shadow-neon-violet">
+                            <i class="fa-solid fa-plus mr-2"></i>Nuevo Servicio
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6 flex flex-wrap items-center gap-2">
+                <span class="mr-1 text-xs font-semibold uppercase tracking-widest text-slate-600">
+                    <i class="fa-solid fa-filter mr-1.5 text-indigo-400"></i>Filtrar
+                </span>
+                <button class="filter-pill rounded-full bg-gradient-to-r from-indigo-600 to-violet-500 px-4 py-2 text-xs font-bold text-white shadow-neon-indigo" data-filter="*">Todos</button>
+                <button class="filter-pill rounded-full border border-slate-800/60 bg-slate-900/60 px-4 py-2 text-xs font-semibold text-slate-300 transition hover:border-slate-700 hover:text-white" data-filter="api">APIs</button>
+                <button class="filter-pill rounded-full border border-slate-800/60 bg-slate-900/60 px-4 py-2 text-xs font-semibold text-slate-300 transition hover:border-slate-700 hover:text-white" data-filter="db">Bases de Datos</button>
+                <button class="filter-pill rounded-full border border-slate-800/60 bg-slate-900/60 px-4 py-2 text-xs font-semibold text-slate-300 transition hover:border-slate-700 hover:text-white" data-filter="ia">IA Tools</button>
+                <span class="ml-auto hidden items-center gap-1.5 text-xs text-slate-500 sm:flex">
+                    <i class="fa-solid fa-cubes text-indigo-400"></i>
+                    <b class="text-slate-300">24</b> servicios registrados
+                </span>
+            </div>
+
+            <section id="servicesGrid" class="mb-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
+                <article data-category="ia" class="service-card group flex flex-col overflow-hidden rounded-2xl border border-slate-800/60 bg-gradient-to-br from-slate-900 to-slate-900/50 backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-violet-500/40 hover:shadow-neon-violet">
+                    <div class="relative h-48 overflow-hidden">
+                        <img class="h-full w-full object-cover opacity-80 grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80" alt="Motor de Inferencia IA">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                        <span class="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-violet-500/30 bg-slate-950/70 px-3 py-1 text-[11px] font-bold text-violet-300 backdrop-blur-md"><i class="fa-solid fa-brain"></i> IA Tools</span>
+                        <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                            <span class="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-400"><i class="fa-solid fa-circle text-[7px] animate-pulse"></i> Operational</span>
+                            <span class="text-[11px] font-medium text-slate-300"><i class="fa-solid fa-tag mr-1 text-violet-400"></i>v3.1.0</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                        <h2 class="flex items-center gap-2 text-lg font-bold text-white"><i class="fa-solid fa-microchip text-violet-400"></i> Motor de Inferencia IA</h2>
+                        <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-400">
+                            Servicio de inferencia distribuida con GPU pooling, soporte multi-modelo y evaluación A/B de variantes de prompting en producción.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="inline-flex items-center gap-1.5 rounded-md border border-cyan-500/20 bg-cyan-500/10 px-2.5 py-1 font-mono text-[11px] font-bold text-neon-300"><i class="fa-brands fa-python"></i> Python 3.12</span>
+                            <span class="inline-flex items-center gap-1.5 rounded-md border border-fuchsia-500/20 bg-fuchsia-500/10 px-2.5 py-1 font-mono text-[11px] font-bold text-fuchsia-300"><i class="fa-solid fa-cubes"></i> PyTorch</span>
+                            <span class="inline-flex items-center gap-1.5 rounded-md border border-slate-700/60 bg-slate-800/60 px-2.5 py-1 font-mono text-[11px] font-bold text-slate-300"><i class="fa-solid fa-fingerprint"></i> CUDA 12.4</span>
+                        </div>
+                        <a href="/app1/vista1/" class="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-indigo-600/25 transition hover:shadow-neon-violet">
+                            <i class="fa-solid fa-chart-simple"></i> Ver Analytics
+                            <i class="fa-solid fa-arrow-right ml-1 text-xs transition group-hover:translate-x-0.5"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article data-category="api" class="service-card group flex flex-col overflow-hidden rounded-2xl border border-slate-800/60 bg-gradient-to-br from-slate-900 to-slate-900/50 backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-indigo-500/40 hover:shadow-neon-indigo">
+                    <div class="relative h-48 overflow-hidden">
+                        <img class="h-full w-full object-cover opacity-80 grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Gateway de Autenticación OAuth2">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                        <span class="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-slate-950/70 px-3 py-1 text-[11px] font-bold text-neon-300 backdrop-blur-md"><i class="fa-solid fa-key"></i> APIs</span>
+                        <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                            <span class="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-400"><i class="fa-solid fa-circle text-[7px] animate-pulse"></i> Operational</span>
+                            <span class="text-[11px] font-medium text-slate-300"><i class="fa-solid fa-tag mr-1 text-cyan-400"></i>v2.2.8</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                        <h2 class="flex items-center gap-2 text-lg font-bold text-white"><i class="fa-solid fa-shield-halved text-indigo-400"></i> Gateway de Autenticación OAuth2</h2>
+                        <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-400">
+                            Proxy de identidad con flujos OAuth2 / OpenID Connect, mTLS, JWT efímero y rotación automática de client secrets.
+                        </p>
+                        <div class="mt-4 flex items-center gap-3 rounded-xl border border-slate-800/60 bg-slate-900/60 px-3 py-2.5">
+                            <div class="flex-1">
+                                <p class="text-[11px] text-slate-500"><i class="fa-solid fa-gauge-high mr-1 text-cyan-400"></i>Latencia p95</p>
+                                <p class="text-sm font-extrabold text-white">12<span class="text-xs font-medium text-slate-500">ms</span></p>
+                            </div>
+                            <div class="h-8 w-px bg-slate-800/60"></div>
+                            <div class="flex-1">
+                                <p class="text-[11px] text-slate-500"><i class="fa-solid fa-plug mr-1 text-cyan-400"></i>Sesiones/seg</p>
+                                <p class="text-sm font-extrabold text-white">8.4k</p>
+                            </div>
+                            <div class="h-8 w-px bg-slate-800/60"></div>
+                            <div class="flex-1">
+                                <p class="text-[11px] text-slate-500"><i class="fa-solid fa-clock mr-1 text-cyan-400"></i>Uptime</p>
+                                <p class="text-sm font-extrabold text-white">99.99%</p>
+                            </div>
+                        </div>
+                        <a href="/app1/vista1/" class="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-indigo-600/25 transition hover:shadow-neon-violet">
+                            <i class="fa-solid fa-chart-simple"></i> Ver Analytics
+                            <i class="fa-solid fa-arrow-right ml-1 text-xs transition group-hover:translate-x-0.5"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article data-category="db" class="service-card group flex flex-col overflow-hidden rounded-2xl border border-slate-800/60 bg-gradient-to-br from-slate-900 to-slate-900/50 backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-neon-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.25),0_8px_32px_-8px_rgba(6,182,212,0.45)]">
+                    <div class="relative h-48 overflow-hidden">
+                        <img class="h-full w-full object-cover opacity-80 grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Pipeline de Procesamiento ETL">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                        <span class="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-slate-950/70 px-3 py-1 text-[11px] font-bold text-neon-300 backdrop-blur-md"><i class="fa-solid fa-database"></i> Bases de Datos</span>
+                        <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                            <span class="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-400"><i class="fa-solid fa-circle text-[7px] animate-pulse"></i> Running</span>
+                            <span class="text-[11px] font-medium text-slate-300"><i class="fa-solid fa-tag mr-1 text-cyan-400"></i>v4.0.2</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                        <h2 class="flex items-center gap-2 text-lg font-bold text-white"><i class="fa-solid fa-arrow-right-arrow-left text-neon-400"></i> Pipeline de Procesamiento ETL</h2>
+                        <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-400">
+                            Orquestación de extracción, transformación y carga sobre flujos de streaming con tolerancia a fallos y checkpointing distribuido.
+                        </p>
+                        <div class="mt-4 flex items-center gap-3 rounded-xl border border-slate-800/60 bg-slate-900/60 px-3 py-2.5">
+                            <div class="flex-1">
+                                <p class="text-[11px] text-slate-500"><i class="fa-solid fa-gauge-high mr-1 text-neon-400"></i>Throughput</p>
+                                <p class="text-sm font-extrabold text-white">1.2<span class="text-xs font-medium text-slate-500"> TB/s</span></p>
+                            </div>
+                            <div class="h-8 w-px bg-slate-800/60"></div>
+                            <div class="flex-1">
+                                <p class="text-[11px] text-slate-500"><i class="fa-solid fa-fire mr-1 text-neon-400"></i>Registros</p>
+                                <p class="text-sm font-extrabold text-white">4.7B</p>
+                            </div>
+                            <div class="h-8 w-px bg-slate-800/60"></div>
+                            <div class="flex-1">
+                                <p class="text-[11px] text-slate-500"><i class="fa-solid fa-rotate mr-1 text-neon-400"></i>Retries</p>
+                                <p class="text-sm font-extrabold text-white">3</p>
+                            </div>
+                        </div>
+                        <a href="/app1/vista1/" class="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-indigo-600/25 transition hover:shadow-neon-violet">
+                            <i class="fa-solid fa-chart-simple"></i> Ver Analytics
+                            <i class="fa-solid fa-arrow-right ml-1 text-xs transition group-hover:translate-x-0.5"></i>
+                        </a>
+                    </div>
+                </article>
+            </section>
+            <div class="rounded-2xl border border-slate-800/60 bg-gradient-to-br from-slate-900 to-slate-900/50 p-5 backdrop-blur-md">
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <div>
+                        <h2 class="flex items-center gap-2 text-base font-bold text-white">
+                            <i class="fa-solid fa-terminal text-indigo-400"></i> Configuración &amp; Terminal Preview
+                        </h2>
+                        <p class="text-xs text-slate-500">Despliegue declarativo · nueva-config.yml · Feb 2026</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button class="rounded-lg border border-slate-800/60 bg-slate-900/60 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-white"><i class="fa-solid fa-copy mr-1"></i>Copiar</button>
+                        <button class="rounded-lg border border-slate-800/60 bg-slate-900/60 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-white"><i class="fa-solid fa-bug mr-1"></i>Debug</button>
+                    </div>
+                </div>
+
+                <div class="mt-4 overflow-hidden rounded-xl border border-slate-800/60 bg-slate-950/90 shadow-2xl">
+                    <div class="flex items-center gap-2 border-b border-slate-800/60 bg-slate-900/80 px-4 py-2.5">
+                        <span class="h-3 w-3 rounded-full bg-rose-500"></span>
+                        <span class="h-3 w-3 rounded-full bg-amber-400"></span>
+                        <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
+                        <div class="ml-3 flex items-center gap-2 rounded-lg bg-slate-800/60 px-3 py-1 text-[11px] font-medium text-slate-300">
+                            <i class="fa-solid fa-file-code text-indigo-400"></i>
+                            <span class="font-mono">nova-service.yml</span>
+                            <span class="ml-2 flex items-center gap-1 text-slate-500"><i class="fa-solid fa-circle text-[6px]"></i> bash</span>
+                        </div>
+                        <span class="ml-auto hidden items-center gap-1.5 text-[10px] font-semibold text-emerald-400 sm:flex"><i class="fa-solid fa-circle text-[6px] animate-pulse"></i> RUNNING</span>
+                    </div>
+                    <div class="overflow-x-auto p-4 font-mono text-[12.5px] leading-6">
+<pre class="text-slate-400"><span class="text-slate-600"># nova.service -- config v2.4.1</span>
+<span class="text-fuchsia-400">services:</span>
+  <span class="text-slate-300">inference-engine:</span>
+    <span class="text-sky-300">runtime:</span>   <span class="text-emerald-300">python:3.12</span>
+    <span class="text-sky-300">framework:</span> <span class="text-emerald-300">pytorch</span>
+    <span class="text-sky-300">replicas:</span>  <span class="text-white">4</span>
+    <span class="text-sky-300">autoscale:</span>
+      <span class="text-sky-300">max_instances:</span> <span class="text-white">16</span>
+      <span class="text-sky-300">cpu_target:</span>     <span class="text-white">70%</span>
+  <span class="text-slate-300">oauth-gateway:</span>
+    <span class="text-sky-300">provider:</span>   <span class="text-emerald-300">oauth2</span>
+    <span class="text-sky-300">latency_p95:</span> <span class="text-emerald-300">"12ms"</span>
+    <span class="text-sky-300">jwt_expiry:</span> <span class="text-emerald-300">"15m"</span>
+  <span class="text-slate-300">etl-pipeline:</span>
+    <span class="text-sky-300">throughput:</span> <span class="text-emerald-300">"1.2 TB/s"</span>
+    <span class="text-sky-300">retries:</span>    <span class="text-white">3</span>
+    <span class="text-sky-300">region:</span>     <span class="text-emerald-300">us-east-1</span>
+<span class="text-fuchsia-400">status:</span>
+  <span class="text-sky-300">health:</span>  <span class="text-emerald-300">operational</span>
+<span class="text-slate-400">$ <span class="text-white">kubectl apply -f nova-service.yml</span></span>
+<span class="text-emerald-400">service/nova configured (12.4s)</span>
+<span class="text-amber-300">$</span><span class="inline-block h-4 w-2 translate-y-0.5 animate-blink bg-emerald-400"></span></pre>
+                    </div>
+                    <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-800/60 bg-slate-900/80 px-4 py-2 text-[11px] text-slate-500">
+                        <span><i class="fa-solid fa-check-double mr-1 text-emerald-400"></i>Convención validada · 8 servicios, 0 errores</span>
+                        <span class="font-mono text-slate-400">SHA-256 <code class="text-slate-300">3f7a2c…</code></span>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="mt-6 flex flex-col items-center justify-between gap-3 border-t border-slate-800/60 pt-5 sm:flex-row">
+                <p class="text-xs text-slate-500">© 2026 Agencia Digital · Programación Back End</p>
+                <div class="flex items-center gap-4 text-xs text-slate-500">
+                    <span>App <b class="text-slate-300">v2.4.1</b></span>
+                    <span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>API <b class="text-emerald-400">Online</b></span>
+                    <span>Build <code class="text-slate-400">9f2c41a</code></span>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        document.getElementById('btnSidebar').addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        });
+        overlay.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
+        });
+        document.querySelectorAll('[data-dropdown]').forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.stopPropagation();
+                const menu = document.getElementById(btn.getAttribute('data-dropdown'));
+                document.querySelectorAll('.dropdown-menu').forEach(m => { if (m !== menu) m.classList.add('hidden'); });
+                menu.classList.toggle('hidden');
+            });
+        });
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('hidden'));
+        });
+        document.addEventListener('keydown', e => {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+                e.preventDefault();
+                document.getElementById('globalSearch').focus();
+            }
+        });
+        document.querySelectorAll('.filter-pill').forEach(pill => {
+            pill.addEventListener('click', () => {
+                document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('bg-gradient-to-r', 'from-indigo-600', 'to-violet-500', 'text-white', 'shadow-neon-indigo'));
+                pill.classList.add('bg-gradient-to-r', 'from-indigo-600', 'to-violet-500', 'text-white', 'shadow-neon-indigo');
+                document.querySelectorAll('.service-card').forEach(card => {
+                    const f = pill.getAttribute('data-filter');
+                    card.style.display = (f === '*' || card.getAttribute('data-category') === f) ? '' : 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
